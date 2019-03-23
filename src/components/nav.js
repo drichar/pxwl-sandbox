@@ -24,7 +24,7 @@ const Pixwel = styled.svg`
 
 const MainNav = ({ active }) => (
   <Menu>
-    <Pixwel viewBox="0 0 240 167">
+    <Pixwel viewBox="0 0 240 167" width="40px" height="40px">
       <defs>
         <linearGradient
           id="pixwelSm_0_"
