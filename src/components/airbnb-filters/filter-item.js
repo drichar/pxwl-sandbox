@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Button, Card, Form } from 'react-bootstrap'
-import styled from 'styled-components'
-import _ from 'lodash'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { Button, Card, Form } from "react-bootstrap"
+import styled from "styled-components"
+import _ from "lodash"
 
 const FilterContainer = styled.div`
   position: relative;
@@ -12,6 +12,8 @@ const FilterMenu = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
+  margin-top: 0.5rem;
+  z-index: 10;
 `
 
 class FilterItem extends Component {
@@ -26,8 +28,8 @@ class FilterItem extends Component {
     super(props)
 
     this.state = {
+      selected: this.props.filter.selected,
       showMenu: false,
-      selected: this.props.filter.selected
     }
 
     this.showMenu = this.showMenu.bind(this)
@@ -55,13 +57,14 @@ class FilterItem extends Component {
   }
 
   handleCheckboxChange = (event) => {
+    const { target } = event
     const { name, filter } = this.props
     const { selected } = this.state
 
-    const idx = filter.selected.indexOf(event.target.name)
+    const idx = filter.selected.indexOf(target.name)
 
     if( idx === -1 ) {
-      selected.push(event.target.name)
+      selected.push(target.name)
     }
     else {
       selected.splice(idx, 1);
@@ -88,8 +91,6 @@ class FilterItem extends Component {
   renderCheckboxes() {
     const { name, filter } = this.props
     const { selected } = this.state
-
-    console.log(this.state)
 
     return (
       <Card.Body>
@@ -138,7 +139,7 @@ class FilterItem extends Component {
 
     return (
       <FilterContainer>
-        <Button variant="primary" onClick={this.showMenu}>
+        <Button variant="primary" onClick={this.showMenu} style={{textTransform: 'capitalize'}}>
           {name}
         </Button>
         {this.state.showMenu && (
