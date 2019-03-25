@@ -136,11 +136,20 @@ class FilterItem extends Component {
 
   render() {
     const { name, type } = this.props
+    const selectedLength = this.state.selected.length
+    let label
+    if( type === 'checkbox' ) {
+      if( selectedLength === 0 ) label = `All ${name}`
+      else label = `${selectedLength} ${name} selected`
+    }
+    else {
+      label = name
+    }
 
     return (
       <FilterContainer>
         <Button variant="primary" onClick={this.showMenu} style={{textTransform: 'capitalize'}}>
-          {name}
+          {label}
         </Button>
         {this.state.showMenu && (
           <FilterMenu
