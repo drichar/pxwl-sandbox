@@ -158,7 +158,7 @@ class AirbnbFiltersPage extends Component {
         return false
       }
 
-      if( filters.searchText && project.name.toLowerCase().search(filters.searchText) === -1 ) {
+      if( filters.searchText && project.name.toLowerCase().search(filters.searchText.toLowerCase()) === -1 ) {
         return false
       }
 
@@ -200,6 +200,7 @@ class AirbnbFiltersPage extends Component {
               name="searchText"
               placeholder="Search&hellip;"
               onChange={this.updateSearchText}
+              style={{maxWidth: '30rem'}}
             />
           </Form.Group>
           <Form.Group>
