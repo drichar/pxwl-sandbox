@@ -35,8 +35,8 @@ const MainNav = ({ active }) => (
           y2="-443.05"
           gradientTransform="matrix(-1 0 0 1 2610.478 450)"
         >
-          <stop offset="0" stop-color="#007bff" />
-          <stop offset="1" stop-color="#007bff" stop-opacity="0" />
+          <stop offset="0" stopColor="#007bff" />
+          <stop offset="1" stopColor="#007bff" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="pixwelSm_1_"
@@ -47,8 +47,8 @@ const MainNav = ({ active }) => (
           y2="-451.9"
           gradientTransform="translate(0 450)"
         >
-          <stop offset="0" stop-color="#007bff" />
-          <stop offset="1" stop-color="#007bff" stop-opacity="0" />
+          <stop offset="0" stopColor="#007bff" />
+          <stop offset="1" stopColor="#007bff" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path d="M79.9 167H67.7L182.2.8H240L79.9 167z" fill="url(#pixwelSm_0_)" />

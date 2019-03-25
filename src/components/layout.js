@@ -10,6 +10,7 @@ const Root = styled.div`
 `
 
 const Main = styled.div`
+  overflow-y: auto;
   padding: 1.5rem;
 `
 
